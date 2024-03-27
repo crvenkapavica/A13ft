@@ -1,0 +1,33 @@
+<div class="table table-bordered table-striped">
+  <table>
+    <thead>
+    <tr>
+      <th>TYPE</th>
+      <th>AMENITIES</th>
+      <th>PRICE</th>
+      <th>CheckinTime</th>
+      <th>Selected Room</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let room of rooms; let e=even; let o=odd"
+      [ngClass]="e ? 'even' : 'odd'"
+    >
+      <td>{{ room.roomType }}</td>
+      <td>{{ room.amenities }}</td>
+      <td>{{ room.price }}</td>
+      <td>{{ room.checkInTime | date }}</td>
+      <td>
+        <button class="btn btn-primary"
+                (click)="selectRoom(room)"
+        >Select
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 *ngIf="bRoomsChanged">{{ roomDepartment }}</h2>
+{{ roomDepartment }}
