@@ -18,7 +18,7 @@ import {RoomList} from "../rooms";
 })
 export class RoomListComponent implements OnInit, OnChanges {
 
-  @Input() rooms: RoomList[] = [];
+  @Input() rooms: RoomList[] | null = [];
 
   @Output() selectedRoom = new EventEmitter<RoomList>();
 

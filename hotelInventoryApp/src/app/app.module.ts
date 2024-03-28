@@ -8,6 +8,7 @@ import { RoomListComponent } from './RoomManagement/room-list/room-list.componen
 import { HighlightDirectiveDirective } from './Directives/highlight-directive.directive';
 import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from "@angular/common/http";
+import {APP_CONFIG, APP_SERVICE_CONFIG} from "./AppConfig/appconfig.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_SERVICE_CONFIG, useValue: APP_CONFIG }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

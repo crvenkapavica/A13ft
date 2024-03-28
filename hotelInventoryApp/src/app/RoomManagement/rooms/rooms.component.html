@@ -1,9 +1,10 @@
 
 <div>
   <button hinvHighlightDirective (click)="addRoom()">Add Room</button>
+  <button hinvHighlightDirective (click)="deleteRoom('3')">Delete Room</button>
 </div>
 
-<div *ngIf="rooms && rooms.availableRooms && rooms.availableRooms > 0">
-  <hinv-room-list [rooms]="roomList"
+<div *ngIf="rooms$ | async as rooms">
+  <hinv-room-list [rooms]="rooms"
   (selectedRoom)="selectRoom($event)"></hinv-room-list>
 </div>
